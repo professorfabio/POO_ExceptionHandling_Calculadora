@@ -1,19 +1,26 @@
 public class Calculator {
     public Calculator(){}
 
-    public double add(double a, double b){
+    public int add(int a, int b){
         return a + b;
     }
     
-    public double sub(double a, double b){
+    public int sub(int a, int b){
         return a - b;
     }
 
-    public double mul(double a, double b){
+    public int mul(int a, int b){
         return a * b;
     }
 
-    public double div(double a, double b){
+    public int div(int a, int b){
         return a / b;
+    }
+
+    public double sqrt(int a){
+        if (a < 0){
+            throw new NegativeNumberException("Raiz quadrada de número negativo.");
+        }
+        return Math.sqrt(a);
     }
 }

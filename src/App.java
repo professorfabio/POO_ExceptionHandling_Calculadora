@@ -6,18 +6,24 @@ public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Initiating app...");
         boolean cont = true;
-        double a, b;
+        int a, b;
         Scanner scanner = new Scanner(System.in);
         calc = new Calculator();
 
         do{
-            
-            System.out.print("First operand: ");
-            a = scanner.nextDouble();
-            System.out.print("Second operand: ");
-            b = scanner.nextDouble();
+            a = b = 0;
+            try{
+                System.out.print("First operand: ");
+                a = scanner.nextInt();
+                System.out.print("Second operand: ");
+                b = scanner.nextInt();
+            } catch (InputMismatchException ime){
+                System.out.println("Invalid input value.");
+                cont = false;
+                continue;
+            }
 
-            System.out.print("Which operation: (A)dd; (S)ubtract; (M)ultiply; (D)ivide (E to exit): ");
+            System.out.print("Which operation: (A)dd; (S)ubtract; (M)ultiply; (D)ivide; s(Q)rt (E to exit): ");
             char rep = Character.toUpperCase(scanner.next().trim().charAt(0));
     
             switch (rep) {
@@ -38,6 +44,13 @@ public class App {
                         cont = false;
                     }
                     break;
+                case 'Q':
+                    try{
+                        System.out.println("Result (of square root):" + calc.sqrt(a));
+                    } catch (NegativeNumberException re){
+                        System.out.println("Square root of negative number");
+                        cont = false;
+                    }
                 default:
                     break;
             }

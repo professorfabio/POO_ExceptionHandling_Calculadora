@@ -19,7 +19,7 @@ public class Calculator {
 
     public double sqrt(int a){
         if (a < 0){
-            throw new NegativeNumberException("Raiz quadrada de número negativo.");
+            throw new NegativeNumberException("Raiz quadrada de número negativo!");
         }
         return Math.sqrt(a);
     }

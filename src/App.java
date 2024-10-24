@@ -47,7 +47,7 @@ public class App {
                     try{
                         System.out.println("Result (of square root):" + calc.sqrt(a));
                     } catch (NegativeNumberException re){
-                        System.out.println("Square root of negative number");
+                        System.out.println(re.getMessage());
                     }
                     break;
                 case 'E':

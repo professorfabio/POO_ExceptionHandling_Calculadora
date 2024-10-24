@@ -28,20 +28,19 @@ public class App {
     
             switch (rep) {
                 case 'A':
-                    System.out.println("Result (of add): " + calc.add(a, b));
+                    System.out.println("Result (of addition): " + calc.add(a, b));
                     break;
                 case 'S':
-                    System.out.println("Result (of add): " + calc.sub(a, b));
+                    System.out.println("Result (of subtraction): " + calc.sub(a, b));
                     break;
                 case 'M':
-                    System.out.println("Result (of add): " + calc.mul(a, b));
+                    System.out.println("Result (of multiplication): " + calc.mul(a, b));
                     break;
                 case 'D':
                     try{
-                        System.out.println("Result (of add): " + calc.div(a, b));
+                        System.out.println("Result (of division): " + calc.div(a, b));
                     } catch (ArithmeticException ae){
                         System.out.println("Division by zero.");
-                        cont = false;
                     }
                     break;
                 case 'Q':
@@ -49,8 +48,11 @@ public class App {
                         System.out.println("Result (of square root):" + calc.sqrt(a));
                     } catch (NegativeNumberException re){
                         System.out.println("Square root of negative number");
-                        cont = false;
                     }
+                    break;
+                case 'E':
+                    cont = false;
+                    break;
                 default:
                     break;
             }

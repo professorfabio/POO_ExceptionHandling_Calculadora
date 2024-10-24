@@ -19,7 +19,7 @@ public class App {
                 b = scanner.nextInt();
             } catch (InputMismatchException ime){
                 System.out.println("Invalid input value.");
-                cont = false;
+                scanner.next();  // this is just to empty the buffer
                 continue;
             }
 
